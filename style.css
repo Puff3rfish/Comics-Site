@@ -55,9 +55,8 @@ header h1 {
 
 /* icon sizing (change --icon-size to adjust) */
 :root {
-  --icon-size: 44px;        /* desktop icons */
-  --icon-size-mobile: 36px; /* mobile icons */
-  --dark-icon-scale: 1.35;  /* increase this to zoom the dark/light icon more */
+  --icon-size: 56px;        /* increased desktop size for toolbar icons */
+  --icon-size-mobile: 44px; /* increased mobile size */
 }
 
 .icon {
@@ -69,8 +68,8 @@ header h1 {
 
 /* make the dark/light icon slightly larger than the other icons */
 #darkIcon {
-  width: calc(var(--icon-size) * var(--dark-icon-scale));
-  height: calc(var(--icon-size) * var(--dark-icon-scale));
+  width: calc(var(--icon-size) * 1.15);
+  height: calc(var(--icon-size) * 1.15);
 }
 
 /* ensure dark-mode button image follows same sizing */
@@ -89,12 +88,12 @@ header h1 {
     height: var(--icon-size-mobile);
   }
   #darkIcon {
-    width: calc(var(--icon-size-mobile) * var(--dark-icon-scale));
-    height: calc(var(--icon-size-mobile) * var(--dark-icon-scale));
+    width: calc(var(--icon-size-mobile) * 1.15);
+    height: calc(var(--icon-size-mobile) * 1.15);
   }
 }
 
-/* Chapter grid layout: center and constrain width so it sits in the middle */
+/* Chapter grid layout */
 #chapterContainer.grid {
   padding: 20px;
   display: grid;
