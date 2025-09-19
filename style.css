@@ -1,0 +1,153 @@
+body {
+  font-family: Consolas, monospace;
+  background: #f9f9f9;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark mode theme */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* CENTER title and synopsis */
+  text-align: center;         /* center text inside header */
+  padding: 18px 20px;
+  background: #252525;
+  color: white;
+}
+
+header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2.4rem; /* larger title */
+  font-weight: 700;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 8px;
+  align-self: center;         /* keep toolbar centered under title */
+}
+
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toolbar-btn:hover {
+  background: #ddd;
+}
+
+/* icon sizing (change --icon-size to adjust) */
+:root {
+  --icon-size: 56px;        /* increased desktop size for toolbar icons */
+  --icon-size-mobile: 44px; /* increased mobile size */
+}
+
+.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  object-fit: contain;
+  display: inline-block;
+}
+
+/* make the dark/light icon slightly larger than the other icons */
+#darkIcon {
+  width: calc(var(--icon-size) * 1.15);
+  height: calc(var(--icon-size) * 1.15);
+}
+
+/* ensure dark-mode button image follows same sizing */
+#darkModeBtn img,
+#gridBtn img,
+#listBtn img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  object-fit: contain;
+}
+
+/* responsive adjustments keep dark icon proportionally larger on small screens */
+@media (max-width: 520px) {
+  .icon {
+    width: var(--icon-size-mobile);
+    height: var(--icon-size-mobile);
+  }
+  #darkIcon {
+    width: calc(var(--icon-size-mobile) * 1.15);
+    height: calc(var(--icon-size-mobile) * 1.15);
+  }
+}
+
+/* Chapter grid layout */
+#chapterContainer.grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* responsive columns */
+  gap: 12px;
+  max-width: 1100px;
+  margin: 18px auto;          /* center the grid on the page */
+  justify-items: center;      /* center items within each cell */
+  box-sizing: border-box;
+}
+
+/* Chapter list layout */
+#chapterContainer.list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chapter box */
+.chapter {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  color: black;   /* Light mode text */
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark .chapter {
+  background: #1e1e1e;
+  color: white;   /* Dark mode text */
+  border-color: #444;
+}
+
+/* synopsis under the title */
+header .synopsis {
+  margin: 8px 0 0;
+  max-width: 980px;
+  color: rgba(255,255,255,0.85); /* looks good on dark header; body.dark applies */
+  font-size: 0.95rem;
+  line-height: 1.45;
+  font-family: Consolas, monospace;
+}
+
+/* ensure synopsis is readable in light mode too */
+body:not(.dark) header .synopsis {
+  color: #333;
+}
+
+/* responsive tweak */
+@media (max-width: 520px) {
+  header .synopsis {
+    margin: 8px 12px 0;
+    font-size: 0.88rem;
+  }
+}
