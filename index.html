@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Comic Reader - Positively Yours</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Positively Yours</h1>
+    <div class="toolbar">
+      <button id="gridBtn" class="toolbar-btn">
+        <img src="assets/icons/grid.png" alt="Grid" class="icon">
+      </button>
+
+      <button id="listBtn" class="toolbar-btn">
+        <img src="assets/icons/list.png" alt="List" class="icon">
+      </button>
+
+      <button id="darkModeBtn" class="toolbar-btn">
+        <img id="darkIcon"
+             src="assets/icons/dm.png"
+             data-dm="assets/icons/dm.png"
+             data-lm="assets/icons/lm.png"
+             alt="Dark Mode"
+             class="icon">
+      </button>
+    </div>
+  </header>
+
+  <main id="chapterContainer"></main>
+
+  <script src="script.js"></script>
+</body>
+</html>
